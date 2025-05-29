@@ -9,19 +9,26 @@ window.title('Smart Budgeter')
 window.geometry('700x500')
 
 #title
-titleLabel = ttk.Label(master = window, text = 'ABC', font = 'Arial')
-titleLabel.pack()
+titleLabel = ttk.Label(master = window, text = 'Smart Budgeter', font = ('Arial', 30))
+titleLabel.pack(padx = 0, pady = 40)
+
+#name
+name = ttk.
 
 #entry widget made
-entry = tk.Entry(window)
-entry.pack()
+entry = tk.Entry(master = window)
+entry.pack(padx = 0, pady = 70)
+
+#text for entering the budgeting info (larger bodies of text)
+#text = tk.Text(master = , height = , font = ('', fontsize))
+#text.pack()
 
 def getInput():
     userInput = entry.get()
 
 #button
-button = tk.Button.get()
-button.pack()
+button = tk.Button(master = window, text = 'Enter', font = ('Arial', 18))
+button.pack(padx = 0, pady = 0)
 
 #run
 window.mainloop()
