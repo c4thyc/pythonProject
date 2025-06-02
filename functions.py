@@ -1,5 +1,4 @@
-#all the functions in order for the program to run
+#could be the recommendations file 50/30/20
 
-import main
 import tkinter as tk
 from tkinter import ttk
