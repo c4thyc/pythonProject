@@ -10,19 +10,15 @@ budgetData = "budgetData.json" #budgeting per month
 #functions for saving user data history---------
 
 #saves the start screen info (name and goal)
-def save_user_info(name, goal):
-    data = {
-        "name": name,
-        "goal": goal
-    }
-    #stores the info into json file
-    with open(userData, "w") as f:
-        json.dump(data, f)
+def save_user_info(userData, goal):
+    userData["goal"] = goal
+    with open("userData.json", "w") as f:
+        json.dump(userData, f)
 
 #loads the history when user runs program again
 def load_user_info():
-    if os.path.exists(userData):
-        with open(userData, "r") as f:
+    if os.path.exists("userData.json"):
+        with open("userData.json", "r") as f:
             return json.load(f)
     return None
 
@@ -30,24 +26,20 @@ def load_user_info():
 
 #saves the data for each month
 def save_monthly_data(month, budgetInfo):
-    #loads existing data
-    allData = {}
-    if os.path.exists(budgetData):
-        with open(budgetData, "r") as f:
-            allData = json.load(f)
+    filename = "budgetData.json"
+    if os.path.exists(filename):
+        with open(filename, "r") as f:
+            existing_data = json.load(f)
+    else:
+        existing_data = {}
 
-    #saves and updates the current month's data
-    allData[month] = budgetInfo
-
-    with open(budgetData, "w") as f:
-        json.dump(allData, f)
-
-def load_all_budget_data():
-    if os.path.exists(budgetData):
-        with open(budgetData, "r") as f:
-            return json.load(f)
-    return {}
+    existing_data[month] = budgetInfo
+    with open(filename, "w") as f:
+        json.dump(existing_data, f)
 
 def load_monthly_data(month):
-    allData = load_all_budget_data()
-    return allData.get(month, None)
+    filename = "budgetData.json"
+    if os.path.exists(filename):
+        with open(filename, "r") as f:
+            return json.load(f)
+    return {}
