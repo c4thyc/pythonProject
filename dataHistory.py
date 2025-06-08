@@ -1,45 +1,41 @@
-#user budgeting and spending history (monthly)
+# user budgeting and spending history (monthly)
 
-import json #for storing the data and budget history
-import os
+import json # for storing the data and budget history
+import os # saves data
 
-#files to store user data, automatically created with the name after use enters their budgeting information
-userData = "userData.json"  #name, goal
-budgetData = "budgetData.json" #budgeting per month
+# files to store user data, automatically created with the name after use enters their budgeting information
+userData = "userData.json"  # name, goal
+budgetData = "budgetData.json" # budgeting info per month
 
-#functions for saving user data history---------
-
-#saves the start screen info (name and goal)
+# saves the start screen info (name and goal)
 def save_user_info(userData, goal):
     userData["goal"] = goal
-    with open("userData.json", "w") as f:
-        json.dump(userData, f)
+    with open("userData.json", "w") as file:
+        json.dump(userData, file) # stores goal data in JSON file
 
-#loads the history when user runs program again
+# loads name and goal (if applicable) when user runs program again
 def load_user_info():
     if os.path.exists("userData.json"):
-        with open("userData.json", "r") as f:
-            return json.load(f)
+        with open("userData.json", "r") as file:
+            return json.load(file) # returns data if any
     return None
 
-#budgeting data-------
-
-#saves the data for each month
+# saves the data for each month in JSON file
 def save_monthly_data(month, budgetInfo):
     filename = "budgetData.json"
-    if os.path.exists(filename):
-        with open(filename, "r") as f:
-            existing_data = json.load(f)
+    if os.path.exists(filename): # checks if there's already budgeting data
+        with open(filename, "r") as file:
+            existing_data = json.load(file) # loads the existing budgeting data
     else:
-        existing_data = {}
+        existing_data = {} # makes a new list if none
+    existing_data[month] = budgetInfo # stores the new info in list
+    with open(filename, "w") as file:
+        json.dump(existing_data, file) # stores info from list into JSON file
 
-    existing_data[month] = budgetInfo
-    with open(filename, "w") as f:
-        json.dump(existing_data, f)
-
-def load_monthly_data(month):
+# loads monthly budgeting data
+def load_monthly_data():
     filename = "budgetData.json"
-    if os.path.exists(filename):
-        with open(filename, "r") as f:
-            return json.load(f)
+    if os.path.exists(filename): # checks if there is already budgeting data stored
+        with open(filename, "r") as file:
+            return json.load(file) # returns the data from JSON file
     return {}
