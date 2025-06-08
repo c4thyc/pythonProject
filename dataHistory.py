@@ -40,4 +40,3 @@ def load_monthly_data():
             return json.load(file) # returns the data from JSON file
     return {}
 
-#

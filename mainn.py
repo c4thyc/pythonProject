@@ -1,4 +1,4 @@
-# code for budgeting program
+# code for budgeting programm
 
 import tkinter as tk # GUI
 from tkinter import ttk
