@@ -6,7 +6,7 @@ Here are some instructions for the Smart Budgeter:
 - When you run the program, your data will automatically save: your name, goal, and budgeting history.
 - To erase your data, simply delete the JSON files on the side: the userData JSON file to renew your name and goal, and the budgetData JSON file to erase your budgeting history.
 
-EXTRA:
+EXTRA INFO:
 
 Since this is a brand new coding tool for me, I utilized various videos and websites to aid me in the process of coding this program.
 

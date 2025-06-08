@@ -5,6 +5,8 @@ from tkinter import ttk
 from dataHistory import save_user_info, load_user_info, save_monthly_data, load_monthly_data
 from recommendation import recommendations_frame
 
+#
+
 class GUI:
 
     # initializing frame

@@ -15,3 +15,5 @@ def recommendations_frame(self):
     ttk.Label(master = frame, text = 'Recommendations', font = ('Arial', 18)).pack(pady = 10)
     tk.Label(master = frame, text = recommendations, font = ('Arial', 14), justify = "left").pack(padx = 20)
     ttk.Button(master = frame, text = 'Back to Main Menu', command = lambda: self.new_frame("menuFrame")).pack(pady = 10)
+
+    #
