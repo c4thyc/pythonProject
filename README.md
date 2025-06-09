@@ -8,7 +8,7 @@ Here are some instructions for the Smart Budgeter:
 
 EXTRA INFO:
 
-Since this is a brand new coding tool for me, I utilized various videos and websites to aid me in the process of coding this program.
+Since this is a new coding tool for me, I utilized various videos and websites to aid me in the process of coding this program.
 
 Here are my credits to the resources I used:
 
